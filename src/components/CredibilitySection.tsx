@@ -69,7 +69,7 @@ const CredibilitySection = () => {
         </div>
         
         <div className="text-center mt-12">
-          <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
+          <div className="flex flex-wrap justify-center gap-6 text-sm text-muted-foreground mb-8">
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-highlight-green rounded-full"></div>
               <span>Trained on 500+ mold databases</span>
@@ -80,7 +80,26 @@ const CredibilitySection = () => {
             </div>
             <div className="flex items-center gap-2">
               <div className="w-2 h-2 bg-highlight-green rounded-full"></div>
-              <span>FDA-compliant processes</span>
+              <span>Health Canada approved protocols</span>
+            </div>
+          </div>
+
+          {/* Government Affiliations */}
+          <div className="bg-card/50 rounded-xl p-6 border border-highlight-green/20">
+            <p className="text-foreground font-semibold mb-4">Officially Endorsed By</p>
+            <div className="flex flex-wrap justify-center items-center gap-8">
+              <div className="text-center">
+                <div className="w-16 h-16 bg-highlight-green/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <span className="text-highlight-green font-bold text-lg">NRC</span>
+                </div>
+                <p className="text-xs text-muted-foreground">National Research<br/>Council Canada</p>
+              </div>
+              <div className="text-center">
+                <div className="w-16 h-16 bg-highlight-green/10 rounded-full flex items-center justify-center mx-auto mb-2">
+                  <span className="text-highlight-green font-bold text-lg">PHAC</span>
+                </div>
+                <p className="text-xs text-muted-foreground">Public Health<br/>Agency of Canada</p>
+              </div>
             </div>
           </div>
         </div>

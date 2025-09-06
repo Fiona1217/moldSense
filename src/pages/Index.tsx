@@ -4,6 +4,8 @@ import SolutionSection from "@/components/SolutionSection";
 import CredibilitySection from "@/components/CredibilitySection";
 import AudienceSection from "@/components/AudienceSection";
 import HowItWorksSection from "@/components/HowItWorksSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import FAQSection from "@/components/FAQSection";
 import FinalCTASection from "@/components/FinalCTASection";
 
 const Index = () => {
@@ -15,6 +17,8 @@ const Index = () => {
       <CredibilitySection />
       <AudienceSection />
       <HowItWorksSection />
+      <TestimonialsSection />
+      <FAQSection />
       <FinalCTASection />
     </main>
   );
