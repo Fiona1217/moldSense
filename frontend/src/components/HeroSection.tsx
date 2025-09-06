@@ -1,10 +1,11 @@
 import { Button } from "@/components/ui/button";
+import { Link } from "react-router-dom";
 import moldSenseLogo from "@/assets/moldsense-logo.jpg";
-import phoneMockup from "@/assets/phone-mockup.jpg";
+import ImageCarousel from "@/components/ImageCarousel";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen gradient-hero flex items-center justify-center px-4">
+    <section className="min-h-screen gradient-hero flex items-center justify-center px-4 pt-16">
       <div className="container mx-auto max-w-6xl">
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           {/* Content */}
@@ -33,25 +34,28 @@ const HeroSection = () => {
             
             {/* CTA Button */}
             <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="xl" className="min-w-48">
-                Pre-order Your Kit
-              </Button>
-              <Button variant="secondary-outline" size="xl">
+              <Link to="/buy">
+                <Button variant="hero" size="xl" className="min-w-48">
+                  Pre-order Your Kit
+                </Button>
+              </Link>
+              <Button 
+                variant="secondary-outline" 
+                size="xl"
+                onClick={() => {
+                  document.getElementById('solution-section')?.scrollIntoView({ 
+                    behavior: 'smooth' 
+                  });
+                }}
+              >
                 Learn More
               </Button>
             </div>
           </div>
           
-          {/* Phone Mockup */}
+          {/* Image Carousel */}
           <div className="flex justify-center lg:justify-end">
-            <div className="relative">
-              <img 
-                src={phoneMockup} 
-                alt="MoldSense App Interface" 
-                className="w-full max-w-md h-auto shadow-card transform hover:scale-105 transition-smooth"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
-            </div>
+            <ImageCarousel />
           </div>
         </div>
       </div>
