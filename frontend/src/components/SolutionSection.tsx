@@ -71,9 +71,11 @@ const SolutionSection = () => {
             <span className="text-highlight-green font-semibold">GPS integration</span> helps you find local experts for removal if needed.
           </p>
           
-          <Button variant="hero" size="lg">
-            Get Started Today
-          </Button>
+          <Link to="/buy">
+            <Button variant="hero" size="lg">
+              Get Started Today
+            </Button>
+          </Link>
         </div>
       </div>
     </section>
