@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import pic1 from '@/assets/pic1.png';
 import pic2 from '@/assets/pic2.jpeg';
 import pic3 from '@/assets/pic3.png';
@@ -16,22 +16,19 @@ const ImageCarousel = () => {
   const duplicatedImages = [...images, ...images, ...images];
 
   return (
-    <div 
-      className="relative w-full max-w-4xl mx-auto overflow-hidden"
-      onMouseEnter={() => setIsPaused(true)}
-      onMouseLeave={() => setIsPaused(false)}
-    >
-      {/* Marquee container */}
-      <div className="relative h-80 overflow-hidden rounded-lg">
+    <div className="relative w-full max-w-4xl mx-auto">
+      {/* Marquee container - full width */}
+      <div 
+        className="relative h-80 overflow-hidden rounded-lg"
+        onMouseEnter={() => setIsPaused(true)}
+        onMouseLeave={() => setIsPaused(false)}
+      >
         <div 
           className={`flex gap-6 h-full ${
-            isPaused ? '' : 'animate-marquee'
+            isPaused ? 'pause-animation' : 'animate-marquee'
           }`}
           style={{
             width: 'fit-content',
-            animationDuration: '30s',
-            animationIterationCount: 'infinite',
-            animationTimingFunction: 'linear'
           }}
         >
           {duplicatedImages.map((image, index) => (
@@ -54,12 +51,12 @@ const ImageCarousel = () => {
         </div>
         
         {/* Fade edges for smooth infinite effect */}
-        <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-background to-transparent pointer-events-none"></div>
-        <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
+        <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
+        <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
         
         {/* Pause indicator */}
         {isPaused && (
-          <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full">
+          <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full z-20">
             <span className="text-xs text-foreground">Paused</span>
           </div>
         )}
