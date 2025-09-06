@@ -1,3 +1,6 @@
+import NRCLogo from "@/assets/CNRC-logo.png";
+import PHACLogo from "@/assets/PHAC-logo.jpg";
+
 const CredibilitySection = () => {
   const comparisons = [
     {
@@ -90,13 +93,21 @@ const CredibilitySection = () => {
             <div className="flex flex-wrap justify-center items-center gap-8">
               <div className="text-center">
                 <div className="w-16 h-16 bg-highlight-green/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-highlight-green font-bold text-lg">NRC</span>
+                  <img 
+                    src={NRCLogo} 
+                    alt="MoldSense App Interface" 
+                    className="w-full max-w-md h-auto shadow-card transform hover:scale-105 transition-smooth"
+                  />
                 </div>
                 <p className="text-xs text-muted-foreground">National Research<br/>Council Canada</p>
               </div>
               <div className="text-center">
                 <div className="w-16 h-16 bg-highlight-green/10 rounded-full flex items-center justify-center mx-auto mb-2">
-                  <span className="text-highlight-green font-bold text-lg">PHAC</span>
+                  <img 
+                    src={PHACLogo} 
+                    alt="MoldSense App Interface" 
+                    className="w-full max-w-md h-auto shadow-card transform hover:scale-105 transition-smooth"
+                  />
                 </div>
                 <p className="text-xs text-muted-foreground">Public Health<br/>Agency of Canada</p>
               </div>
