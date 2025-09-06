@@ -112,7 +112,7 @@ const PricingSection = () => {
         </div>
 
         {/* Trust indicators */}
-        <div className="text-center mt-12">
+        <div className="text-center mt-12 animate-fade-in-up animation-delay-400">
           <div className="flex flex-wrap justify-center gap-8 text-sm text-muted-foreground">
             <div className="flex items-center gap-2">
               <div className="w-4 h-4 bg-highlight-green rounded-full flex items-center justify-center">
