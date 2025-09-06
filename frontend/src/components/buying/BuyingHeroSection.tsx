@@ -15,7 +15,7 @@ const BuyingHeroSection = () => {
               <img 
                 src={moldSenseLogo} 
                 alt="MoldSense" 
-                className="h-16 w-auto"
+                className="h-20 w-auto"
               />
             </div>
             
@@ -32,13 +32,10 @@ const BuyingHeroSection = () => {
               </p>
             </div>
             
-            {/* CTA Button */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Button variant="hero" size="xl" className="min-w-48">
-                Pre-Order Your Kit
-              </Button>
-              <Button variant="secondary-outline" size="xl">
-                Download App
+            {/* Single CTA Button */}
+            <div className="flex justify-center lg:justify-start">
+              <Button variant="hero" size="xl" className="min-w-64">
+                Buy Kit Now - $80
               </Button>
             </div>
           </div>
@@ -51,7 +48,6 @@ const BuyingHeroSection = () => {
                 alt="MoldSense Kit and App" 
                 className="w-full max-w-md h-auto shadow-card transform hover:scale-105 transition-smooth"
               />
-              {/* Kit mockup could be added here in the future */}
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>
             </div>
           </div>
