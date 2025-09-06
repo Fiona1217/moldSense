@@ -64,9 +64,11 @@ const AudienceSection = () => {
             <p className="text-muted-foreground mb-8">
               MoldSense users report 89% confidence in their home's air quality after using our app.
             </p>
-            <Button variant="hero" size="lg">
-              Start Your Peace of Mind
-            </Button>
+            <Link to="/buy">
+              <Button variant="hero" size="lg">
+                Start Your Peace of Mind
+              </Button>
+            </Link>
           </div>
         </div>
       </div>
