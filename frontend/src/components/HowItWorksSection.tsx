@@ -88,9 +88,11 @@ const HowItWorksSection = () => {
             <div className="text-center">
               <div className="text-3xl font-bold text-highlight-green mb-2">$80.00</div>
               <div className="text-muted-foreground mb-6">One-time kit purchase</div>
-              <Button variant="hero" size="lg" className="w-full">
-                Reserve Your Kit Today
-              </Button>
+              <Link to="/buy">
+                <Button variant="hero" size="lg" className="w-full">
+                  Reserve Your Kit Today
+                </Button>
+              </Link>
             </div>
           </div>
         </div>
