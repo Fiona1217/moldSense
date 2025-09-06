@@ -16,12 +16,21 @@ const ImageCarousel = () => {
   const duplicatedImages = [...images, ...images, ...images];
 
   return (
-    <div className="w-full -mx-4 sm:-mx-6 lg:-mx-8">
-      {/* Marquee container - truly full screen width */}
+    <div 
+      className="relative"
+      style={{
+        width: '100vw',
+        marginLeft: 'calc(-50vw + 50%)',
+        margin: 0,
+        padding: 0
+      }}
+    >
+      {/* Marquee container - true full screen width */}
       <div 
-        className="relative h-80 overflow-hidden mb-16"
+        className="relative h-80 overflow-hidden mb-32"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
+        style={{ margin: 0, padding: 0 }}
       >
         <div 
           className={`flex gap-6 h-full ${
@@ -50,12 +59,8 @@ const ImageCarousel = () => {
           ))}
         </div>
         
-        {/* Fade edges for smooth infinite effect */}
-        <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
-        <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
-        
-        {/* Bottom fade for smoother transition */}
-        <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-background to-transparent pointer-events-none z-10"></div>
+        {/* Large bottom fade for smooth transition to next section */}
+        <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-background via-background/80 to-transparent pointer-events-none z-10"></div>
         
         {/* Pause indicator */}
         {isPaused && (
