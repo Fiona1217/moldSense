@@ -28,12 +28,16 @@ const FinalCTASection = () => {
           
           {/* CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
-            <Button variant="hero" size="xl" className="min-w-64">
-              Pre-order Now - $80
-            </Button>
-            <Button variant="secondary-outline" size="xl">
-              Join Waitlist (Free)
-            </Button>
+            <Link to="/buy">
+              <Button variant="hero" size="xl" className="min-w-64">
+                Pre-order Now - $80
+              </Button>
+            </Link>
+            <Link to="/buy">
+              <Button variant="secondary-outline" size="xl">
+                Join Waitlist (Free)
+              </Button>
+            </Link>
           </div>
           
           {/* Trust Indicators */}
