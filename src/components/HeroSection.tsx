@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import sporeGuardLogo from "@/assets/sporeguard-logo.jpg";
+import moldSenseLogo from "@/assets/moldsense-logo.jpg";
 import phoneMockup from "@/assets/phone-mockup.jpg";
 
 const HeroSection = () => {
@@ -12,8 +12,8 @@ const HeroSection = () => {
             {/* Logo */}
             <div className="flex justify-center lg:justify-start">
               <img 
-                src={sporeGuardLogo} 
-                alt="SporeGuard" 
+                src={moldSenseLogo} 
+                alt="MoldSense" 
                 className="h-16 w-auto"
               />
             </div>
@@ -47,7 +47,7 @@ const HeroSection = () => {
             <div className="relative">
               <img 
                 src={phoneMockup} 
-                alt="SporeGuard App Interface" 
+                alt="MoldSense App Interface" 
                 className="w-full max-w-md h-auto shadow-card transform hover:scale-105 transition-smooth"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent rounded-lg"></div>

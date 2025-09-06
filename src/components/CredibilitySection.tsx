@@ -3,27 +3,27 @@ const CredibilitySection = () => {
     {
       feature: "Time to Results",
       amazon: "3-7 days",
-      sporeGuard: "Instant"
+      moldSense: "Instant"
     },
     {
       feature: "Cost per Test",
       amazon: "$25-50",
-      sporeGuard: "$9.99"
+      moldSense: "$9.99"
     },
     {
       feature: "Expert Analysis",
       amazon: "Basic lab report",
-      sporeGuard: "AI + Expert database"
+      moldSense: "AI + Expert database"
     },
     {
       feature: "Risk Assessment", 
       amazon: "Species only",
-      sporeGuard: "Health impact & next steps"
+      moldSense: "Health impact & next steps"
     },
     {
       feature: "Local Expert Network",
       amazon: "None",
-      sporeGuard: "GPS-integrated"
+      moldSense: "GPS-integrated"
     }
   ];
 
@@ -49,7 +49,7 @@ const CredibilitySection = () => {
               <h3 className="font-semibold text-muted-foreground">Amazon Kit</h3>
             </div>
             <div className="p-6 border-l border-border">
-              <h3 className="font-semibold text-highlight-green">SporeGuard</h3>
+              <h3 className="font-semibold text-highlight-green">MoldSense</h3>
             </div>
           </div>
           
@@ -62,7 +62,7 @@ const CredibilitySection = () => {
                 <span className="text-muted-foreground">{comparison.amazon}</span>
               </div>
               <div className="p-6 border-l border-border">
-                <span className="text-highlight-green font-semibold">{comparison.sporeGuard}</span>
+                <span className="text-highlight-green font-semibold">{comparison.moldSense}</span>
               </div>
             </div>
           ))}

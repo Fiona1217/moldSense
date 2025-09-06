@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import sporeGuardLogo from "@/assets/sporeguard-logo.jpg";
+import moldSenseLogo from "@/assets/moldsense-logo.jpg";
 
 const FinalCTASection = () => {
   return (
@@ -9,8 +9,8 @@ const FinalCTASection = () => {
           {/* Logo */}
           <div className="flex justify-center">
             <img 
-              src={sporeGuardLogo} 
-              alt="SporeGuard" 
+              src={moldSenseLogo} 
+              alt="MoldSense" 
               className="h-20 w-auto"
             />
           </div>
@@ -21,7 +21,7 @@ const FinalCTASection = () => {
           </h2>
           
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
-            Join the thousands of families already protecting their homes with SporeGuard. 
+            Join the thousands of families already protecting their homes with MoldSense. 
             Your health is worth more than uncertainty.
           </p>
           

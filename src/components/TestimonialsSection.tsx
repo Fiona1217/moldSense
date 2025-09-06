@@ -9,7 +9,7 @@ const TestimonialsSection = () => {
     {
       name: "Dr. Michael Rodriguez", 
       role: "Allergy Specialist, Vancouver",
-      text: "I recommend SporeGuard to my patients with respiratory issues. The accuracy is impressive and it helps them make informed decisions about their environment.",
+      text: "I recommend MoldSense to my patients with respiratory issues. The accuracy is impressive and it helps them make informed decisions about their environment.",
       rating: 5
     },
     {
@@ -28,7 +28,7 @@ const TestimonialsSection = () => {
             Trusted by thousands of <span className="text-highlight-green">Canadian families</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            See what homeowners, health professionals, and property managers are saying about SporeGuard.
+            See what homeowners, health professionals, and property managers are saying about MoldSense.
           </p>
         </div>
 

@@ -61,7 +61,7 @@ const AudienceSection = () => {
               Join thousands of families breathing safer
             </h3>
             <p className="text-muted-foreground mb-8">
-              SporeGuard users report 89% confidence in their home's air quality after using our app.
+              MoldSense users report 89% confidence in their home's air quality after using our app.
             </p>
             <Button variant="hero" size="lg">
               Start Your Peace of Mind

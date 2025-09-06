@@ -8,12 +8,12 @@ import {
 const FAQSection = () => {
   const faqs = [
     {
-      question: "How accurate is SporeGuard compared to lab testing?",
-      answer: "SporeGuard achieves 94% accuracy in mold species identification, comparable to professional lab testing. Our AI is trained on over 500 mold databases and continuously validated by certified mycologists."
+      question: "How accurate is MoldSense compared to lab testing?",
+      answer: "MoldSense achieves 94% accuracy in mold species identification, comparable to professional lab testing. Our AI is trained on over 500 mold databases and continuously validated by certified mycologists."
     },
     {
       question: "What's included in the $80 kit?",
-      answer: "Your kit includes: professional sampling tools, detailed instructions, access to the SporeGuard app, unlimited scans for 1 year, expert consultation if needed, and GPS-integrated local expert network access."
+      answer: "Your kit includes: professional sampling tools, detailed instructions, access to the MoldSense app, unlimited scans for 1 year, expert consultation if needed, and GPS-integrated local expert network access."
     },
     {
       question: "How quickly do I get results?",
@@ -21,7 +21,7 @@ const FAQSection = () => {
     },
     {
       question: "Is this approved by Canadian health authorities?",
-      answer: "Yes, SporeGuard follows protocols endorsed by the Public Health Agency of Canada and uses research validated by the National Research Council Canada. Our processes meet all Canadian health and safety standards."
+      answer: "Yes, MoldSense follows protocols endorsed by the Public Health Agency of Canada and uses research validated by the National Research Council Canada. Our processes meet all Canadian health and safety standards."
     },
     {
       question: "What if the app can't identify the mold?",
@@ -29,11 +29,11 @@ const FAQSection = () => {
     },
     {
       question: "Does this work for all types of properties?",
-      answer: "Absolutely! SporeGuard works in homes, apartments, basements, commercial buildings, RVs, and any indoor space. The app adapts recommendations based on your specific environment and location."
+      answer: "Absolutely! MoldSense works in homes, apartments, basements, commercial buildings, RVs, and any indoor space. The app adapts recommendations based on your specific environment and location."
     },
     {
       question: "What's your refund policy?",
-      answer: "We offer a 30-day money-back guarantee. If you're not completely satisfied with SporeGuard, return the kit for a full refund, no questions asked."
+      answer: "We offer a 30-day money-back guarantee. If you're not completely satisfied with MoldSense, return the kit for a full refund, no questions asked."
     },
     {
       question: "Do I need internet connection to use the app?",
@@ -49,7 +49,7 @@ const FAQSection = () => {
             Frequently Asked <span className="text-highlight-green">Questions</span>
           </h2>
           <p className="text-xl text-muted-foreground">
-            Everything you need to know about SporeGuard and mold detection.
+            Everything you need to know about MoldSense and mold detection.
           </p>
         </div>
 

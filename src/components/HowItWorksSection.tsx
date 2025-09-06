@@ -5,12 +5,12 @@ const HowItWorksSection = () => {
     {
       icon: "📦",
       title: "Order Your Kit",
-      description: "Get your SporeGuard detection kit delivered to your door in 2-3 days."
+      description: "Get your MoldSense detection kit delivered to your door in 2-3 days."
     },
     {
       icon: "📱", 
       title: "Download the App",
-      description: "Install SporeGuard from the App Store or Google Play and create your account."
+      description: "Install MoldSense from the App Store or Google Play and create your account."
     },
     {
       icon: "🔬",
@@ -62,7 +62,7 @@ const HowItWorksSection = () => {
           <div className="grid md:grid-cols-2 gap-8 items-center">
             <div>
               <h3 className="text-2xl font-bold text-foreground mb-4">
-                What's in your SporeGuard Kit?
+                What's in your MoldSense Kit?
               </h3>
               <ul className="space-y-3 text-muted-foreground">
                 <li className="flex items-center gap-3">
