@@ -98,6 +98,11 @@ All colors MUST be HSL.
   .transition-bounce {
     transition: var(--transition-bounce);
   }
+  
+  /* Pause animation without restarting */
+  .pause-animation {
+    animation-play-state: paused;
+  }
 }
 
 @layer base {
