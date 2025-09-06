@@ -16,10 +16,10 @@ const ImageCarousel = () => {
   const duplicatedImages = [...images, ...images, ...images];
 
   return (
-    <div className="relative w-full max-w-4xl mx-auto">
-      {/* Marquee container - full width */}
+    <div className="w-full">
+      {/* Marquee container - full screen width */}
       <div 
-        className="relative h-80 overflow-hidden rounded-lg"
+        className="relative h-80 overflow-hidden"
         onMouseEnter={() => setIsPaused(true)}
         onMouseLeave={() => setIsPaused(false)}
       >
@@ -36,7 +36,7 @@ const ImageCarousel = () => {
               key={index} 
               className="flex-shrink-0 relative"
               style={{
-                width: '280px',
+                width: '300px',
                 height: '320px'
               }}
             >
@@ -51,8 +51,8 @@ const ImageCarousel = () => {
         </div>
         
         {/* Fade edges for smooth infinite effect */}
-        <div className="absolute left-0 top-0 w-16 h-full bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
-        <div className="absolute right-0 top-0 w-16 h-full bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
+        <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-background to-transparent pointer-events-none z-10"></div>
+        <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-background to-transparent pointer-events-none z-10"></div>
         
         {/* Pause indicator */}
         {isPaused && (
