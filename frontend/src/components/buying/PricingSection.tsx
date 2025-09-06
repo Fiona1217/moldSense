@@ -6,13 +6,21 @@ const PricingSection = () => {
   const [selectedPlan, setSelectedPlan] = useState('one-time');
 
   const kitIncludes = [
-    "Professional swab collection tools",
-    "Multiple petri dishes for sampling",
-    "Protective gloves and safety equipment",
+    "Professional grade swabs",
+    "Sterile petri dishes", 
+    "Safety gloves included",
     "Detailed instruction manual",
-    "QR code for instant app activation",
-    "Full access to MoldSense app (lifetime)",
-    "Expert support and guidance"
+    "QR code for app access",
+    "Lifetime app access"
+  ];
+
+  const renewalIncludes = [
+    "Fresh kit every 4 months",
+    "All premium kit contents",
+    "Priority customer support",
+    "App updates and new features", 
+    "Cancel anytime",
+    "50% savings vs individual kits"
   ];
 
   return (
@@ -45,7 +53,7 @@ const PricingSection = () => {
             
             <div className="text-center mb-8">
               <Package className="w-12 h-12 text-highlight-green mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-foreground mb-2">Complete Kit</h3>
+              <h3 className="text-2xl font-bold text-foreground mb-2">Complete Detection Kit</h3>
               <div className="text-5xl font-bold text-highlight-green mb-2">$80</div>
               <p className="text-muted-foreground">One-time purchase</p>
             </div>
@@ -78,33 +86,19 @@ const PricingSection = () => {
             onClick={() => setSelectedPlan('subscription')}
           >
             <div className="text-center mb-8">
-              <Repeat className="w-12 h-12 text-teal mx-auto mb-4" />
-              <h3 className="text-2xl font-bold text-foreground mb-2">Kit Renewal</h3>
-              <div className="text-5xl font-bold text-teal mb-2">$30</div>
+              <Repeat className="w-12 h-12 text-highlight-green mx-auto mb-4" />
+              <h3 className="text-2xl font-bold text-foreground mb-2">Protection Renewal</h3>
+              <div className="text-5xl font-bold text-highlight-green mb-2">$30</div>
               <p className="text-muted-foreground">Every 4 months</p>
             </div>
 
             <div className="space-y-4 mb-8">
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">Fresh testing supplies</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">New swabs and petri dishes</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">Updated safety equipment</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">Continued app access</span>
-              </div>
-              <div className="flex items-start gap-3">
-                <Check className="w-5 h-5 text-teal mt-0.5 flex-shrink-0" />
-                <span className="text-foreground">Cancel anytime</span>
-              </div>
+              {renewalIncludes.map((item, index) => (
+                <div key={index} className="flex items-start gap-3">
+                  <Check className="w-5 h-5 text-highlight-green mt-0.5 flex-shrink-0" />
+                  <span className="text-foreground">{item}</span>
+                </div>
+              ))}
             </div>
 
             <Button 
