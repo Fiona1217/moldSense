@@ -8,7 +8,7 @@ const HeroSection = () => {
     <section className="min-h-screen gradient-hero flex flex-col items-center justify-center px-4 pt-16">
       <div className="container mx-auto max-w-6xl">
         {/* Centered Content */}
-        <div className="text-center space-y-12">
+        <div className="text-center space-y-8">
           {/* Logo */}
           <div className="flex justify-center">
             <img 
@@ -54,7 +54,7 @@ const HeroSection = () => {
       </div>
       
       {/* Full Width Image Carousel */}
-      <div className="w-full mt-16">
+      <div className="w-full mt-12">
         <ImageCarousel />
       </div>
     </section>
