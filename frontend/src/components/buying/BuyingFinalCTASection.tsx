@@ -28,13 +28,10 @@ const BuyingFinalCTASection = () => {
             and have peace of mind about your family's health.
           </p>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center pt-8">
+          {/* Single CTA Button */}
+          <div className="flex justify-center pt-8">
             <Button variant="hero" size="xl" className="min-w-64">
-              Pre-Order Kit Now - $80
-            </Button>
-            <Button variant="secondary-outline" size="xl">
-              Download App First
+              Buy Kit Now - $80
             </Button>
           </div>
           
