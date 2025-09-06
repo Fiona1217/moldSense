@@ -1,4 +1,4 @@
-// SporeGuard JavaScript - Interactive functionality
+// MoldSense JavaScript - Interactive functionality
 
 document.addEventListener('DOMContentLoaded', function() {
     // FAQ Accordion functionality
