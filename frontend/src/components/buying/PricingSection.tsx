@@ -26,7 +26,7 @@ const PricingSection = () => {
   return (
     <section className="py-24 gradient-section">
       <div className="container mx-auto max-w-6xl px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16 animate-fade-in-up">
           <h2 className="text-4xl md:text-5xl font-bold text-foreground mb-6">
             Choose Your <span className="text-highlight-green">Protection Plan</span>
           </h2>
@@ -35,7 +35,7 @@ const PricingSection = () => {
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+        <div className="grid lg:grid-cols-2 gap-8 max-w-4xl mx-auto animate-fade-in-up animation-delay-200">
           {/* One-Time Purchase */}
           <div 
             className={`relative bg-card/50 backdrop-blur-sm p-8 rounded-lg border-2 transition-smooth cursor-pointer ${
