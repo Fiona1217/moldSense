@@ -9,8 +9,8 @@ const HeroSection = () => {
       <div className="container mx-auto max-w-6xl">
         {/* Centered Content */}
         <div className="text-center space-y-8">
-          {/* Logo */}
-          <div className="flex justify-center">
+          {/* Logo with animation */}
+          <div className="flex justify-center animate-fade-in-up">
             <img 
               src={moldSenseLogo} 
               alt="MoldSense" 
@@ -18,21 +18,21 @@ const HeroSection = () => {
             />
           </div>
           
-          {/* Headlines */}
+          {/* Headlines with staggered animation */}
           <div className="space-y-6">
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight animate-fade-in-up animation-delay-200">
               <span className="text-foreground">Breathe Safe.</span>
               <br />
               <span className="text-highlight-green">Live Clean.</span>
             </h1>
             
-            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto animate-fade-in-up animation-delay-400">
               AI-powered mold detection that tells you what's dangerous and what's not.
             </p>
           </div>
           
-          {/* CTA Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          {/* CTA Buttons with animation */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-in-up animation-delay-600">
             <Link to="/buy">
               <Button variant="hero" size="xl" className="min-w-48">
                 Pre-order Your Kit
@@ -54,7 +54,7 @@ const HeroSection = () => {
       </div>
       
       {/* Full Width Image Carousel */}
-      <div className="w-full mt-12">
+      <div className="w-full mt-12 animate-fade-in-up animation-delay-800">
         <ImageCarousel />
       </div>
     </section>
