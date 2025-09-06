@@ -11,7 +11,7 @@ const CredibilitySection = () => {
     {
       feature: "Cost per Test",
       amazon: "$25-50",
-      moldSense: "$13.33"
+      moldSense: "$80"
     },
     {
       feature: "Expert Analysis",
