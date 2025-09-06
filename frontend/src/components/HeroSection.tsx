@@ -5,59 +5,57 @@ import ImageCarousel from "@/components/ImageCarousel";
 
 const HeroSection = () => {
   return (
-    <section className="min-h-screen gradient-hero flex items-center justify-center px-4 pt-16">
+    <section className="min-h-screen gradient-hero flex flex-col items-center justify-center px-4 pt-16">
       <div className="container mx-auto max-w-6xl">
-        <div className="grid lg:grid-cols-2 gap-12 items-center">
-          {/* Content */}
-          <div className="text-center lg:text-left space-y-8">
-            {/* Logo */}
-            <div className="flex justify-center lg:justify-start">
-              <img 
-                src={moldSenseLogo} 
-                alt="MoldSense" 
-                className="h-28 w-auto"
-              />
-            </div>
-            
-            {/* Headlines */}
-            <div className="space-y-6">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-                <span className="text-foreground">Breathe Safe.</span>
-                <br />
-                <span className="text-highlight-green">Live Clean.</span>
-              </h1>
-              
-              <p className="text-xl md:text-2xl text-muted-foreground max-w-2xl">
-                AI-powered mold detection that tells you what's dangerous and what's not.
-              </p>
-            </div>
-            
-            {/* CTA Button */}
-            <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-              <Link to="/buy">
-                <Button variant="hero" size="xl" className="min-w-48">
-                  Pre-order Your Kit
-                </Button>
-              </Link>
-              <Button 
-                variant="secondary-outline" 
-                size="xl"
-                onClick={() => {
-                  document.getElementById('solution-section')?.scrollIntoView({ 
-                    behavior: 'smooth' 
-                  });
-                }}
-              >
-                Learn More
-              </Button>
-            </div>
+        {/* Centered Content */}
+        <div className="text-center space-y-12">
+          {/* Logo */}
+          <div className="flex justify-center">
+            <img 
+              src={moldSenseLogo} 
+              alt="MoldSense" 
+              className="h-40 w-auto"
+            />
           </div>
           
-          {/* Image Carousel */}
-          <div className="flex justify-center lg:justify-end">
-            <ImageCarousel />
+          {/* Headlines */}
+          <div className="space-y-6">
+            <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
+              <span className="text-foreground">Breathe Safe.</span>
+              <br />
+              <span className="text-highlight-green">Live Clean.</span>
+            </h1>
+            
+            <p className="text-xl md:text-2xl text-muted-foreground max-w-3xl mx-auto">
+              AI-powered mold detection that tells you what's dangerous and what's not.
+            </p>
+          </div>
+          
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center">
+            <Link to="/buy">
+              <Button variant="hero" size="xl" className="min-w-48">
+                Pre-order Your Kit
+              </Button>
+            </Link>
+            <Button 
+              variant="secondary-outline" 
+              size="xl"
+              onClick={() => {
+                document.getElementById('solution-section')?.scrollIntoView({ 
+                  behavior: 'smooth' 
+                });
+              }}
+            >
+              Learn More
+            </Button>
           </div>
         </div>
+      </div>
+      
+      {/* Full Width Image Carousel */}
+      <div className="w-full mt-16">
+        <ImageCarousel />
       </div>
     </section>
   );
