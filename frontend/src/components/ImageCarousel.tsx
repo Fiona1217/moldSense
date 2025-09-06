@@ -17,10 +17,10 @@ const ImageCarousel = () => {
 
   return (
     <div 
-      className="relative"
+      className="relative w-screen"
       style={{
-        width: '100vw',
-        marginLeft: 'calc(-50vw + 50%)',
+        marginLeft: 'calc(50% - 50vw)',
+        marginRight: 'calc(50% - 50vw)',
         margin: 0,
         padding: 0
       }}
