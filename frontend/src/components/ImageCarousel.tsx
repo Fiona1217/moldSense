@@ -10,64 +10,59 @@ import pic8 from '@/assets/pic8.png';
 
 const ImageCarousel = () => {
   const images = [pic1, pic2, pic3, pic4, pic5, pic6, pic7, pic8];
-  const [currentIndex, setCurrentIndex] = useState(0);
   const [isPaused, setIsPaused] = useState(false);
 
-  useEffect(() => {
-    if (!isPaused) {
-      const interval = setInterval(() => {
-        setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
-      }, 3000); // Move every 3 seconds
-
-      return () => clearInterval(interval);
-    }
-  }, [isPaused, images.length]);
+  // Duplicate images for infinite loop effect
+  const duplicatedImages = [...images, ...images, ...images];
 
   return (
     <div 
-      className="relative w-full max-w-md mx-auto"
+      className="relative w-full max-w-4xl mx-auto overflow-hidden"
       onMouseEnter={() => setIsPaused(true)}
       onMouseLeave={() => setIsPaused(false)}
     >
-      {/* Main carousel container */}
-      <div className="relative overflow-hidden rounded-lg shadow-card h-96">
+      {/* Marquee container */}
+      <div className="relative h-80 overflow-hidden rounded-lg">
         <div 
-          className="flex transition-transform duration-500 ease-in-out h-full"
-          style={{ transform: `translateX(-${currentIndex * 100}%)` }}
+          className={`flex gap-6 h-full ${
+            isPaused ? '' : 'animate-marquee'
+          }`}
+          style={{
+            width: 'fit-content',
+            animationDuration: '30s',
+            animationIterationCount: 'infinite',
+            animationTimingFunction: 'linear'
+          }}
         >
-          {images.map((image, index) => (
-            <div key={index} className="w-full h-full flex-shrink-0">
+          {duplicatedImages.map((image, index) => (
+            <div 
+              key={index} 
+              className="flex-shrink-0 relative"
+              style={{
+                width: '280px',
+                height: '320px'
+              }}
+            >
               <img
                 src={image}
-                alt={`Mold detection sample ${index + 1}`}
-                className="w-full h-full object-cover"
+                alt={`Mold detection sample ${(index % images.length) + 1}`}
+                className="w-full h-full object-cover rounded-lg shadow-card hover:shadow-glow transition-all duration-300 hover:scale-105"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-background/30 to-transparent rounded-lg"></div>
             </div>
           ))}
         </div>
         
-        {/* Gradient overlay */}
-        <div className="absolute inset-0 bg-gradient-to-t from-background/20 to-transparent"></div>
+        {/* Fade edges for smooth infinite effect */}
+        <div className="absolute left-0 top-0 w-20 h-full bg-gradient-to-r from-background to-transparent pointer-events-none"></div>
+        <div className="absolute right-0 top-0 w-20 h-full bg-gradient-to-l from-background to-transparent pointer-events-none"></div>
         
         {/* Pause indicator */}
         {isPaused && (
-          <div className="absolute top-4 right-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full">
+          <div className="absolute top-4 left-4 bg-background/80 backdrop-blur-sm px-3 py-1 rounded-full">
             <span className="text-xs text-foreground">Paused</span>
           </div>
         )}
-      </div>
-      
-      {/* Dots indicator */}
-      <div className="flex justify-center mt-4 space-x-2">
-        {images.map((_, index) => (
-          <button
-            key={index}
-            onClick={() => setCurrentIndex(index)}
-            className={`w-2 h-2 rounded-full transition-colors ${
-              index === currentIndex ? 'bg-highlight-green' : 'bg-muted'
-            }`}
-          />
-        ))}
       </div>
     </div>
   );
