@@ -12,7 +12,7 @@ const BuyingFinalCTASection = () => {
             <img 
               src={moldSenseLogo} 
               alt="MoldSense" 
-              className="h-28 w-auto"
+              className="h-40 w-auto"
             />
           </div>
           
