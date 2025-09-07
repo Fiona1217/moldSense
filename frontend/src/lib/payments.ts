@@ -3,7 +3,7 @@ import { createCheckoutSession, CheckoutRequest } from './api';
 
 // Initialize Stripe
 const getStripe = () => {
-  const publishableKey = import.meta.env.REACT_APP_STRIPE_PUBLISHABLE_KEY;
+  const publishableKey = import.meta.env.VITE_STRIPE_PUBLISHABLE_KEY;
   console.log('Stripe publishable key:', publishableKey ? 'Found' : 'Missing'); // Debug log
   return loadStripe(publishableKey);
 };
