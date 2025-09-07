@@ -2,7 +2,6 @@
 
 const getBackendUrl = (): string => {
   const url = import.meta.env.VITE_BACKEND_URL;
-  console.log('Backend URL:', url); // Debug log
   return url || '';
 };
 
