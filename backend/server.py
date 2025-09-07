@@ -55,6 +55,19 @@ class ChatResponse(BaseModel):
     response: str
     timestamp: datetime = Field(default_factory=datetime.utcnow)
 
+class CheckoutRequest(BaseModel):
+    price_id: Optional[str] = None
+    amount: Optional[int] = None  # in cents
+    currency: str = "usd"
+    product_name: str
+    success_url: str
+    cancel_url: str
+    mode: str = "payment"  # "payment" or "subscription"
+
+class CheckoutResponse(BaseModel):
+    checkout_url: str
+    session_id: str
+
 # Add your routes to the router instead of directly to app
 @api_router.get("/")
 async def root():
