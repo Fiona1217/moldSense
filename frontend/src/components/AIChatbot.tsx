@@ -2,6 +2,7 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { MessageCircle, X, Send, Bot, User } from 'lucide-react';
+import { chatWithAI } from '@/lib/api';
 
 interface Message {
   id: string;
