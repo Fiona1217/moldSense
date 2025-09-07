@@ -1,9 +1,9 @@
 // API utility functions
 
 const getBackendUrl = (): string => {
-  const url = import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL || '';
+  const url = import.meta.env.REACT_APP_BACKEND_URL;
   console.log('Backend URL:', url); // Debug log
-  return url;
+  return url || '';
 };
 
 export const apiCall = async (endpoint: string, options: RequestInit = {}) => {
