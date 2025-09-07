@@ -72,6 +72,7 @@ const PricingSection = () => {
               variant={selectedPlan === 'one-time' ? 'hero' : 'secondary-outline'} 
               size="lg" 
               className="w-full"
+              onClick={buyMoldSenseKit}
             >
               Buy Now - $80
             </Button>
