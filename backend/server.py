@@ -234,7 +234,11 @@ app.include_router(api_router)
 app.add_middleware(
     CORSMiddleware,
     allow_credentials=True,
-    allow_origins=os.environ.get('CORS_ORIGINS', '*').split(','),
+    allow_origins=[
+        "https://moldsense.netlify.app",
+        "https://api.moldsense.com",
+        "http://localhost:3000",  # For local development
+    ],
     allow_methods=["*"],
     allow_headers=["*"],
 )
