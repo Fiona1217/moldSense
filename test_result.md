@@ -258,3 +258,5 @@ test_plan:
 agent_communication:
   - agent: "main"
     message: "Successfully implemented all requested features: mobile-first buying page, persistent navigation, image carousel replacement, AI chatbot with OpenAI template, and button functionality. Screenshots confirm all systems working correctly."
+  - agent: "testing"
+    message: "Backend API testing completed. Results: Health Check ✅, Stripe Payment ✅, Stripe Subscription ✅, Database Operations ✅, Error Handling ✅. CRITICAL ISSUE: OpenAI Chat API failing due to invalid API key (401 Unauthorized). The code implementation is correct, but the OPENAI_API_KEY environment variable contains an invalid key that needs to be replaced with a valid OpenAI API key."
