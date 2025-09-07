@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Button } from "@/components/ui/button";
 import { Check, Package, Repeat } from 'lucide-react';
+import { buyMoldSenseKit, subscribeMoldSense } from '@/lib/payments';
 
 const PricingSection = () => {
   const [selectedPlan, setSelectedPlan] = useState('one-time');
