@@ -9,9 +9,6 @@ export const apiCall = async (endpoint: string, options: RequestInit = {}) => {
   const backendUrl = getBackendUrl();
   const url = `${backendUrl}${endpoint}`;
   
-  console.log('Making API call to:', url); // Debug log
-  console.log('Options:', options); // Debug log
-  
   const defaultOptions: RequestInit = {
     headers: {
       'Content-Type': 'application/json',
@@ -29,11 +26,8 @@ export const apiCall = async (endpoint: string, options: RequestInit = {}) => {
 
   const response = await fetch(url, mergedOptions);
   
-  console.log('Response status:', response.status); // Debug log
-  
   if (!response.ok) {
     const errorText = await response.text();
-    console.error('API Error Response:', errorText); // Debug log
     throw new Error(`API call failed: ${response.status} ${response.statusText}`);
   }
   
