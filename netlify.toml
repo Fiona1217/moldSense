@@ -1,0 +1,15 @@
+[build]
+  base = "frontend"
+  publish = "frontend/dist"
+  command = "yarn build"
+
+[build.environment]
+  NODE_VERSION = "18"
+  VITE_BACKEND_URL = "https://api.moldsense.com/api"
+  VITE_STRIPE_PUBLISHABLE_KEY = "pk_test_51S4UpSGuytAMZ5Cu0VVhnuJ3SL05VcggRm6Ut0bsDBsGzvwv1Vno2iNodLxVv2ONwVqRiPShJe8HrtK9TmjUWeH200GpxA3YcU"
+  VITE_FRONTEND_URL="https://moldsense.netlify.app"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
