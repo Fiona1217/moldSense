@@ -107,6 +107,7 @@ const PricingSection = () => {
               variant={selectedPlan === 'subscription' ? 'hero' : 'secondary-outline'} 
               size="lg" 
               className="w-full"
+              onClick={subscribeMoldSense}
             >
               Subscribe - $30/4 months
             </Button>
