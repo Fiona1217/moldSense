@@ -105,7 +105,7 @@
 user_problem_statement: "Build mobile-first buying page for mold-identification app with persistent navigation, image carousel replacement, AI chatbot integration, and button functionality updates"
 
 backend:
-  - task: "OpenAI Chatbot API Integration"
+  - task: "Health Check API Endpoint"
     implemented: true
     working: true
     file: "/app/backend/server.py"
@@ -114,8 +114,59 @@ backend:
     needs_retesting: false
     status_history:
       - working: true
+        agent: "testing"
+        comment: "GET /api/ endpoint tested successfully - returns {'message': 'Hello World'} with 200 status code"
+
+  - task: "OpenAI Chatbot API Integration"
+    implemented: true
+    working: false
+    file: "/app/backend/server.py"
+    stuck_count: 1
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
         agent: "main"
         comment: "Implemented /api/chat endpoint with OpenAI GPT-4o mini integration, system prompt for MoldSense assistant, and template for API key"
+      - working: false
+        agent: "testing"
+        comment: "POST /api/chat endpoint returns 500 error due to invalid OpenAI API key (401 Unauthorized from OpenAI API). Code implementation is correct, but OPENAI_API_KEY environment variable contains invalid key. Error handling works properly - returns user-friendly message."
+
+  - task: "Stripe Payment Integration - One-time Payment"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "POST /api/create-checkout-session tested successfully for one-time payments ($80 MoldSense Kit). Returns valid Stripe checkout URL and session ID. Database storage working correctly."
+
+  - task: "Stripe Payment Integration - Subscription Payment"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "high"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "POST /api/create-checkout-session tested successfully for subscription payments ($30 MoldSense Renewal, 4-month intervals). Returns valid Stripe checkout URL and session ID. Database storage working correctly."
+
+  - task: "Database Operations and Error Handling"
+    implemented: true
+    working: true
+    file: "/app/backend/server.py"
+    stuck_count: 0
+    priority: "medium"
+    needs_retesting: false
+    status_history:
+      - working: true
+        agent: "testing"
+        comment: "MongoDB integration working correctly. Stripe checkout sessions stored properly. Error handling tested with invalid requests (422 status codes returned appropriately). Logger issue fixed by moving logger definition to top of file."
 
 frontend:
   - task: "Persistent Navigation System"
