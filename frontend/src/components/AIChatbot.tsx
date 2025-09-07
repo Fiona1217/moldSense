@@ -48,31 +48,15 @@ const AIChatbot = () => {
     setIsLoading(true);
 
     try {
-      // Use environment variable for backend URL
-      const backendUrl = import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL;
-      const response = await fetch(`${backendUrl}/chat`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          message: inputValue,
-          context: 'mold-detection-assistant'
-        }),
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const botMessage: Message = {
-          id: (Date.now() + 1).toString(),
-          content: data.response,
-          sender: 'bot',
-          timestamp: new Date()
-        };
-        setMessages(prev => [...prev, botMessage]);
-      } else {
-        throw new Error('Failed to get response');
-      }
+      // Use the API utility function
+      const data = await chatWithAI(inputValue, 'mold-detection-assistant');
+      const botMessage: Message = {
+        id: (Date.now() + 1).toString(),
+        content: data.response,
+        sender: 'bot',
+        timestamp: new Date()
+      };
+      setMessages(prev => [...prev, botMessage]);
     } catch (error) {
       // Fallback response when API is not configured
       const fallbackMessage: Message = {
