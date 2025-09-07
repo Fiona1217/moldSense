@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from "@/components/ui/button";
 import moldSenseLogo from "@/assets/moldsense-logo.jpg";
+import { buyMoldSenseKit } from '@/lib/payments';
 
 const BuyingFinalCTASection = () => {
   return (
