@@ -10,6 +10,7 @@ from typing import List, Optional
 import uuid
 from datetime import datetime
 import openai
+import stripe
 
 
 ROOT_DIR = Path(__file__).parent
