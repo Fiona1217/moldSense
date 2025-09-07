@@ -249,10 +249,11 @@ metadata:
 
 test_plan:
   current_focus:
-    - "All functionality confirmed working via screenshots"
-  stuck_tasks: []
+    - "OpenAI API Key Configuration Issue"
+  stuck_tasks:
+    - "OpenAI Chatbot API Integration"
   test_all: false
-  test_priority: "complete"
+  test_priority: "high_first"
 
 agent_communication:
   - agent: "main"
