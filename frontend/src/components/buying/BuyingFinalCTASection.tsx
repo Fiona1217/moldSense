@@ -31,7 +31,7 @@ const BuyingFinalCTASection = () => {
           
           {/* Single CTA Button */}
           <div className="flex justify-center pt-8 animate-fade-in-up animation-delay-600">
-            <Button variant="hero" size="xl" className="min-w-64">
+            <Button variant="hero" size="xl" className="min-w-64" onClick={buyMoldSenseKit}>
               Buy Kit Now - $80
             </Button>
           </div>
