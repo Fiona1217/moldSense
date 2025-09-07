@@ -141,6 +141,86 @@ async def chat_with_ai(chat_message: ChatMessage):
             detail="Sorry, I'm having trouble thinking right now. Please try again in a moment."
         )
 
+@api_router.post("/create-checkout-session", response_model=CheckoutResponse)
+async def create_checkout_session(checkout_request: CheckoutRequest):
+    """
+    Create a Stripe Checkout session for payment
+    """
+    if not stripe_secret_key:
+        raise HTTPException(
+            status_code=503,
+            detail="Payment processing is not configured. Please set STRIPE_SECRET_KEY environment variable."
+        )
+    
+    try:
+        if checkout_request.mode == "subscription":
+            # For subscription payments, we need to create a price first or use existing price_id
+            if not checkout_request.price_id:
+                # Create a recurring price for subscription
+                price = stripe.Price.create(
+                    unit_amount=checkout_request.amount,
+                    currency=checkout_request.currency,
+                    recurring={"interval": "month", "interval_count": 4},  # Every 4 months
+                    product_data={
+                        "name": checkout_request.product_name,
+                    },
+                )
+                price_id = price.id
+            else:
+                price_id = checkout_request.price_id
+                
+            checkout_session = stripe.checkout.Session.create(
+                line_items=[{
+                    'price': price_id,
+                    'quantity': 1,
+                }],
+                mode=checkout_request.mode,
+                success_url=checkout_request.success_url,
+                cancel_url=checkout_request.cancel_url,
+            )
+        else:
+            # One-time payment
+            checkout_session = stripe.checkout.Session.create(
+                line_items=[{
+                    'price_data': {
+                        'currency': checkout_request.currency,
+                        'product_data': {
+                            'name': checkout_request.product_name,
+                        },
+                        'unit_amount': checkout_request.amount,
+                    },
+                    'quantity': 1,
+                }],
+                mode=checkout_request.mode,
+                success_url=checkout_request.success_url,
+                cancel_url=checkout_request.cancel_url,
+            )
+
+        # Store checkout session in database for tracking
+        checkout_record = {
+            "id": str(uuid.uuid4()),
+            "session_id": checkout_session.id,
+            "amount": checkout_request.amount,
+            "currency": checkout_request.currency,
+            "product_name": checkout_request.product_name,
+            "mode": checkout_request.mode,
+            "status": "pending",
+            "timestamp": datetime.utcnow()
+        }
+        await db.checkout_sessions.insert_one(checkout_record)
+
+        return CheckoutResponse(
+            checkout_url=checkout_session.url,
+            session_id=checkout_session.id
+        )
+
+    except Exception as e:
+        logger.error(f"Error creating checkout session: {str(e)}")
+        raise HTTPException(
+            status_code=500,
+            detail="Failed to create checkout session. Please try again."
+        )
+
 # Include the router in the main app
 app.include_router(api_router)
 
