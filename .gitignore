@@ -65,4 +65,7 @@ pip-delete-this-directory.txt
 
 # Temporary files
 *.tmp
-*.temp
+*.temp-e 
+# Environment files
+*.env
+*.env.*
