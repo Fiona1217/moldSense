@@ -5,6 +5,7 @@ import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import BuyingPage from "./pages/BuyingPage";
+import PaymentSuccess from "./pages/PaymentSuccess";
 import NotFound from "./pages/NotFound";
 import AIChatbot from "./components/AIChatbot";
 
