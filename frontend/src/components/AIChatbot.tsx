@@ -47,8 +47,9 @@ const AIChatbot = () => {
     setIsLoading(true);
 
     try {
-      // TODO: Replace with actual OpenAI API call when API key is provided
-      const response = await fetch('/api/chat', {
+      // Use environment variable for backend URL
+      const backendUrl = import.meta.env.REACT_APP_BACKEND_URL || process.env.REACT_APP_BACKEND_URL;
+      const response = await fetch(`${backendUrl}/chat`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
