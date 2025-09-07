@@ -26,6 +26,11 @@ openai_api_key = os.environ.get('OPENAI_API_KEY')
 if openai_api_key:
     openai.api_key = openai_api_key
 
+# Stripe configuration
+stripe_secret_key = os.environ.get('STRIPE_SECRET_KEY')
+if stripe_secret_key:
+    stripe.api_key = stripe_secret_key
+
 # Create the main app without a prefix
 app = FastAPI()
 
