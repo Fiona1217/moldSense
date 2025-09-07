@@ -1,7 +1,7 @@
 // API utility functions
 
 const getBackendUrl = (): string => {
-  const url = import.meta.env.REACT_APP_BACKEND_URL;
+  const url = import.meta.env.VITE_BACKEND_URL;
   console.log('Backend URL:', url); // Debug log
   return url || '';
 };
